@@ -2,214 +2,133 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webseite im Aufbau</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 50px;
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        h1 {
-            font-size: 3rem;
-            background: linear-gradient(45deg, #00ffcc, #00ccff);
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: slideIn 1.5s ease-out;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-            color: #ddd;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .construction {
-            font-size: 2rem;
-            margin-top: 30px;
-            animation: pulse 2s infinite;
-        }
-
-        .dots {
-            display: inline-block;
-            width: 40px;
-            text-align: left;
-        }
-
-        .dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #00ffcc;
-            border-radius: 50%;
-            margin: 0 2px;
-            animation: bounce 1.4s infinite;
-        }
-
-        .dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        /* Animationen */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Hintergrund-Animation */
-        .bg-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .shape {
-            position: absolute;
-            background: rgba(0, 255, 204, 0.1);
-            border-radius: 50%;
-            animation: float 6s infinite ease-in-out;
-        }
-
-        .shape:nth-child(1) {
-            width: 100px;
-            height: 100px;
-            top: 10%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            width: 150px;
-            height: 150px;
-            top: 60%;
-            right: 20%;
-            animation-delay: 2s;
-        }
-
-        .shape:nth-child(3) {
-            width: 80px;
-            height: 80px;
-            bottom: 20%;
-            left: 30%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Start - farin-langner.de</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="bg-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-    <div class="container">
-        <h1>Webseite im Aufbau</h1>
-        <p>Wir gestalten gerade etwas Großartiges für dich.<br>
-            Bleib dran – es wird bald fertig sein!</p>
-        <div class="construction">
-            In Arbeit<span class="dots"><span class="dot"></span><span class="dot"></span><span
-                    class="dot"></span></span>
-        </div>
-    </div>
+  <canvas id="particles" aria-hidden="true" style="position:fixed; inset:0; z-index:-1; opacity:.9"></canvas>
 
-    <script>
-        // Optional: Zusätzliche Interaktivität
-        document.addEventListener('mousemove', (e) => {
-            const shapes = document.querySelectorAll('.shape');
-            shapes.forEach(shape => {
-                const speed = 0.05;
-                const x = (window.innerWidth - e.pageX * speed) / 100;
-                const y = (window.innerHeight - e.pageY * speed) / 100;
-                shape.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        });
-    </script>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">Farin<span style="opacity:.5">/</span>Langner</a>
+      <nav class="hide-mobile">
+        <a class="link" href="index.html#projects">Projekte</a>
+        <a class="link" href="index.html#about">Über</a>
+      </nav>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button id="themeToggle" class="toggle" aria-label="Farbschema umschalten">
+          <span class="icon" aria-hidden="true">
+            <span class="sun"></span>
+            <span class="moon" style="opacity:0; transform: scale(.75) rotate(-90deg)"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="section hero" style="position:relative; overflow:hidden;">
+      <div class="blob" data-speed=".2" style="left:-80px; top:-80px; width:280px; height:280px;"></div>
+      <div class="blob" data-speed=".35" style="right:-40px; top:30%; width:320px; height:320px;"></div>
+      <div class="blob" data-speed=".15" style="left:35%; bottom:-90px; width:240px; height:240px;"></div>
+
+      <div class="container row">
+        <div>
+          <h1>Willkommen auf meiner Webseite</h1>
+          <p>Zu viele Hobbys, zu wenig Zeit, und trotzdem entsteht immer was. Schau selbst.</p>
+          <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
+            <div class="magnetic"><a class="btn btn-primary" href="#projects">Projekte ansehen</a></div>
+            <div class="magnetic"><a class="btn btn-ghost" href="#about">über</a></div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="height:420px;">
+            <div class="glass"></div>
+            <canvas id="wave" aria-hidden="true"
+              style="position:relative; z-index:1; width:100%; height:100%; border-radius:18px;"></canvas>
+            <span style="position:absolute; right:16px; bottom:12px; font-size:12px; opacity:.6;">Coole wellen</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container"
+        style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:16px;">
+        <h2 style="margin:0; font-size: clamp(22px, 2.2vw, 32px);">Ausgewählte Projekte</h2>
+      </div>
+      <div class="container grid" id="projectsGrid"></div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container" style="max-width: 860px;">
+        <h2 style="margin:0; font-size: clamp(22px, 2.2vw, 32px);">Über mich</h2>
+        <p style="margin-top: 12px; color: var(--muted);">Ich bin Farin und ich baue lieber selbst, als fertig zu
+          kaufen.
+          Hier findest du, was dabei rauskommt.</p>
+
+        <div id="contact" class="card" style="margin-top: 22px;">
+          <h3 style="margin:4px 0 0 0; font-size:18px;">Kontakt</h3>
+          <p style="margin: 8px 0 12px 0; color: var(--muted);">Du findest mich auch hier:</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            </a>
+            <div class="magnetic"><a class="btn btn-ghost"
+                href="https://www.thingiverse.com/f4rin/designs">Thingiverse</a></div>
+            <div class="magnetic"><a class="btn btn-ghost" href="https://github.com/Farin25">Github</a></div>
+            <div class="magnetic"><a class="btn btn-ghost"
+                href="https://www.printables.com/@Farin_3672726">Printables</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="container"
+      style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div>© <span id="year"></span> Farin Langner - Alle Rechte vorbehalten </div>
+      <div class="links">
+        <a class="link" href="impressum.html">Impressum</a>
+        <a class="link" href="datenschutz.html">Datenschutz</a>
+        <a class="link" href="index.html#contact">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+
+  <div id="modalBack" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="margin:8px 0; font-size:18px;"></h3>
+        <button class="close-x" id="modalClose" aria-label="Modal schließen">✕</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="thumb"><img id="modalImg" alt=""></div>
+          <p id="modalSubtitle" style="margin:10px 0 0 0; color:var(--muted);"></p>
+        </div>
+        <div>
+          <div class="meta">
+            <h4>Steckbrief</h4>
+            <dl id="metaList"></dl>
+          </div>
+          <div class="modal-actions" style="margin-top:12px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

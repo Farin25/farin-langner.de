@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Info / Impressum – farin-langner.de</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <canvas id="particles" aria-hidden="true" style="position:fixed; inset:0; z-index:-1; opacity:.9"></canvas>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">Farin<span style="opacity:.5">/</span>Langner</a>
+      <nav class="hide-mobile">
+        <a class="link" href="index.html#projects">Projekte</a>
+        <a class="link" href="index.html#about">Über</a>
+      </nav>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button id="themeToggle" class="toggle" aria-label="Farbschema umschalten">
+          <span class="icon" aria-hidden="true">
+            <span class="sun"></span>
+            <span class="moon" style="opacity:0; transform: scale(.75) rotate(-90deg)"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+        <h1 style="margin:0; font-size: clamp(26px, 3vw, 38px);">Info (keine Impressumspflicht)</h1>
+        <p style="margin-top:12px; color:var(--muted)">
+          Dies ist eine <strong>rein private, nicht-geschäftsmäßige Webseite</strong>. Es gibt hier
+          <strong>keine Werbung, keine Affiliate-Links, keinen Shop und keine bezahlten Inhalte</strong>.
+          Daher besteht <strong>keine Impressumspflicht nach § 5 TMG</strong>.
+        </p>
+        <p style="margin-top:12px; color:var(--muted)">
+          Es werden <strong>keine journalistisch-redaktionell gestalteten Inhalte</strong> angeboten
+          (i.S.d. § 18 MStV). Bei Fragen erreichst du mich per E-Mail:
+        </p>
+
+        <div class="card" style="margin-top:18px;">
+          <h3 style="margin:4px 0 0 0; font-size:18px;">Kontakt</h3>
+          <p style="margin: 8px 0 12px 0; color: var(--muted);">
+            Schreib mir gern eine Mail:
+          </p>
+          <a class="btn btn-primary" href="mailto:hi@farin-langner.de">
+            hi<span style="display:none">x1</span>@farin<span style="display:none">y2</span>-langner<span
+              style="display:none">z3</span>.de
+          </a>
+        </div>
+
+        <p style="margin-top:16px; color:var(--muted); font-size:14px;">
+          Hinweis: Falls diese Seite zukünftig Werbung, Affiliate-Links, einen Shop oder andere
+          geschäftsmäßige Inhalte enthält, wird hier ein vollständiges Impressum ergänzt.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container"
+      style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div>© <span id="year"></span> Farin Langner - Alle Rechte vorbehalten </div>
+      <div class="links">
+        <a class="link" href="impressum.html">Info</a>
+        <a class="link" href="datenschutz.html">Datenschutz</a>
+        <a class="link" href="index.html#contact">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="modalBack" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="margin:8px 0; font-size:18px;"></h3>
+        <button class="close-x" id="modalClose" aria-label="Modal schließen">✕</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="thumb"><img id="modalImg" alt=""></div>
+          <p id="modalSubtitle" style="margin:10px 0 0 0; color:var(--muted);"></p>
+        </div>
+        <div>
+          <div class="meta">
+            <h4>Steckbrief</h4>
+            <dl id="metaList"></dl>
+          </div>
+          <div class="modal-actions" style="margin-top:12px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
