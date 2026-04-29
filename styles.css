@@ -131,6 +131,17 @@ header {
   background: color-mix(in oklab, var(--text) 6%, transparent);
 }
 
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: color-mix(in oklab, var(--text) 6%, transparent);
+}
+
+.btn-secondary:hover {
+  background: color-mix(in oklab, var(--text) 12%, transparent);
+  transform: translateY(-1px);
+}
+
 
 .hero h1 {
   font-size: clamp(32px, 3.4vw, 56px);

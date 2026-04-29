@@ -76,11 +76,12 @@ const PROJECTS = [
   {
     id: 'dnsblocklist',
     title: 'DNS Blocklist / Pi-hole list',
-    subtitle: 'Eine DNS Blockliste ',
-    gradient: 'linear-gradient(135deg, #6d28d9 0%, #a21caf 45%, #ec4899 100%)',
+    subtitle: 'Meine DNS Blockliste für Werbung, Tracker, Scam und phishing',
+    gradient: 'linear-gradient(160deg, #060d0d 0%, #0a2416 60%, #040d08 100%)',
     details: { jahr: '2026' },
+    description: 'Meine DNS Blockliste für Werbung, Scam, Phishing und Tracker. Alle Domains sind vorher geprüft, damit nichts unnötig blockiert wird.',
     website: 'https://farin25.github.io/DNS-blocklists/',
-    GitHub: 'https://github.com/Farin25/DNS-blocklists',
+    github: 'https://github.com/Farin25/DNS-blocklists',
   },
 ];
 
@@ -115,7 +116,10 @@ const prefersReduced = () => window.matchMedia('(prefers-reduced-motion: reduce)
       updateIcon();
     }
   });
+
 })();
+
+
 
 
 (function initParallax() {
@@ -356,6 +360,16 @@ function openModal(id) {
     a.target = '_blank';
     a.rel = 'noopener';
     a.textContent = 'Website ansehen';
+    modalActions.appendChild(a);
+  }
+
+  if (p.github) {
+    const a = document.createElement('a');
+    a.className = 'btn btn-secondary';
+    a.href = p.github;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = 'GitHub';
     modalActions.appendChild(a);
   }
 
